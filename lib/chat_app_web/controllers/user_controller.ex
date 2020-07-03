@@ -14,7 +14,7 @@ defmodule ChatAppWeb.UserController do
         conn
         |> Accounts.login(user)
         |> put_flash(:info, "User Created And Logged In Successfully")
-        |> redirect(to: Routes.page_path(conn, :index))
+        |> redirect(to: Routes.group_path(conn, :index))
 
       {:error, %Ecto.Changeset{} = changeset} ->
         render(conn, "new.html", changeset: changeset, action: Routes.user_path(conn, :create))

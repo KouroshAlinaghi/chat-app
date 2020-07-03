@@ -1,7 +1,7 @@
 <%= for group <- @groups do %>
   <div class="card">
     <h3><%= group.name %></h3>
-    <%= if ChatApp.Msg.is_member?(@current_user.id, group.id) do %>
+    <%= if @user_signed_in && ChatApp.Msg.is_member?(@current_user.id, group.id) do %>
       <%= link "See", to: Routes.group_path(@conn, :show, group) %>
     <% else %>
       <%= button "Join", to: Routes.group_path(@conn, :join, group) %>

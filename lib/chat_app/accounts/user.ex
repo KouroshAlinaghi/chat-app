@@ -5,7 +5,7 @@ defmodule ChatApp.Accounts.User do
   schema "users" do
     field :password, :string
     field :username, :string
-    has_many :messages, ChatApp.Message
+    has_many :messages, ChatApp.Msg.Message
     many_to_many :groups, ChatApp.Msg.Group, join_through: ChatApp.Msg.GroupUser
 
     timestamps()

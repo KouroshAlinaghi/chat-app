@@ -102,7 +102,7 @@ defmodule ChatAppWeb.GroupController do
     else
       conn
       |> put_flash(:error, "You Cant Delete/Change Group")
-      |> redirect(to: Routes.grous_path(conn, :index))
+      |> redirect(to: Routes.group_path(conn, :index))
     end
   end
 
