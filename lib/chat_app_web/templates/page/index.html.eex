@@ -1,0 +1,5 @@
+<div id="messages" role="log" aria-live="polite"></div>
+<p>Write Bruh</p>
+<input id="chat-input" type="text">
+<h2>Online Users</h2>
+<div class="users"></div>

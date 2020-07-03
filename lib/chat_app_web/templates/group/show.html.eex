@@ -1,0 +1,13 @@
+<script>window.allowWebsocket = true;</script> 
+<script>window.subtopic = <%= @group.id %>;</script> 
+<h2><%= @group.name %></h2>
+<div id="messages" role="log" aria-live="polite"></div>
+<p>Write Bruh</p>
+<input id="chat-input" type="text">
+<h2>Online Users</h2>
+<div class="users"></div>
+<%= if ChatApp.Msg.is_owner?(@current_user.id, @group.id) do %>
+  <%= link "Delete Group", to: Routes.group_path(@conn, :delete, @group), method: :delete %>
+<% else %>
+  <%= link "Leave Group", to: Routes.group_path(@conn, :leave, @group), method: :delete %>
+<% end %>
